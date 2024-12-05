@@ -47,7 +47,23 @@
 </body>
 
 <style>
+  .titulo-fichas{
+    background: linear-gradient(to bottom, #2E8B57, #006400);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.titulo-fichas::selection {
+    background: #f5576c;
+    color: #fff;
+}
   .divInput {
     display: flex;
     flex-direction: column;
@@ -128,6 +144,12 @@ h3 {
     margin-bottom: 10px;
 }
 
+h6 {
+  grid-column: span 2; /* Hacer que los títulos abarquen ambas columnas */
+  margin-bottom: 10px;
+}
+
+
 /* Asegura que los inputs tengan un buen espaciado */
 input, select, textarea {
     padding: 10px;
@@ -173,6 +195,11 @@ input, select, textarea {
     background-color: #ccc; /* Gris */
     cursor: not-allowed;
     box-shadow: none;
+}
+
+.th-titulos{
+  font-weight:bold;
+  font-size: 20px;
 }
 
 /* Hacer que el formulario se vea bien en pantallas pequeñas */

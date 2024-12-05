@@ -2,16 +2,16 @@
 
 {% block conteudo %}
 <div class="container">
-    <h1 style="text-align: center; margin: 0;">Fichas</h1>
+    <h1 class='titulo-fichas'>Fichas</h1>
     <br>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered" style='background: linear-gradient(to bottom, #2E8B57, #006400);; color:white'>
         <tr>
-            <th>N°</th>
-            <th>Cliente</th>
-            <th>Retiro</th>
-            <th>Total</th>
-            <th>Seña</th>
-            <th>Saldo</th>
+            <th class='th-titulos'>N°</th>
+            <th class='th-titulos'>Cliente</th>
+            <th class='th-titulos'>Retiro</th>
+            <th class='th-titulos'>Total</th>
+            <th class='th-titulos'>Seña</th>
+            <th class='th-titulos'>Saldo</th>
         </tr>
         {% for trabajo in trabajos %}
         <tr>

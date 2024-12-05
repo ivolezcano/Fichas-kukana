@@ -1,16 +1,17 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<h1 style="text-align: center; margin: 0;">Fichas Ópticas</h1>
-
+<br>
+<h1 class='titulo-fichas'style="text-align: center; margin: 0;">Fichas Ópticas</h1>
+<br><br>
 <form action="{% url 'listagem_usuarios' %}" method="post">
     {% csrf_token %}
     <div class="form-section">
         <div class="form-group">
-            <label for="numero_trabajo">Número de Trabajo</label>
+            <label for="numero_trabajo"><h3>Número de Trabajo</h3></label>
             {{ form.numero_trabajo }}
         </div>
         <div class="form-group">
-            <label for="fecha_retiro">Fecha en que el cliente puede retirar</label>
+            <label for="fecha_retiro"><h3>Fecha de Retiro</h3></label>
             {{ form.fecha_retiro }}
         </div>  
     </div>
@@ -46,7 +47,8 @@
 
 <!-- Sección de detalles de lejos -->
 <div class="form-section">
-    <h3>Detalles de Lejos</h3>
+    <h3>LEJOS</h3>
+    <h6>Ojo Derecho</h6>
     <div class="form-group">
         <label for="ojo_derecho_lejos_esf">Ojo Derecho - Esf (Lejos)</label>
         {{ form.ojo_derecho_lejos_esf }}
@@ -63,6 +65,7 @@
         <label for="ojo_derecho_lejos_dip">Ojo Derecho - Dip (Lejos)</label>
         {{ form.ojo_derecho_lejos_dip }}
     </div>
+    <h6>Ojo Izquierdo</h6>
     <div class="form-group">
         <label for="ojo_izquierdo_lejos_esf">Ojo Izquierdo - Esf (Lejos)</label>
         {{ form.ojo_izquierdo_lejos_esf }}
@@ -80,18 +83,19 @@
         {{ form.ojo_izquierdo_lejos_alt }}
     </div>
     <div class="form-group">
-        <label for="cristal_lejos">Cristal (Lejos)</label>
+        <label for="cristal_lejos"><h6>CRISTAL</h6></label>
         {{ form.cristal_lejos }}
     </div>
     <div class="form-group">
-        <label for="armazon_lejos">Armazón (Lejos)</label>
+        <label for="armazon_lejos"><h6>ARMAZÓN</h6></label>
         {{ form.armazon_lejos }}
     </div>
 </div>
 
 <!-- Sección de detalles de cerca -->
 <div class="form-section">
-    <h3>Detalles de Cerca</h3>
+    <h3>CERCA</h3>
+    <h6>Ojo Derecho</h6>
     <div class="form-group">
         <label for="ojo_derecho_cerca_esf">Ojo Derecho - Esf (Cerca)</label>
         {{ form.ojo_derecho_cerca_esf }}
@@ -108,6 +112,7 @@
         <label for="ojo_derecho_cerca_dip">Ojo Derecho - Dip (Cerca)</label>
         {{ form.ojo_derecho_cerca_dip }}
     </div>
+    <h6>Ojo Izquierdo</h6>
     <div class="form-group">
         <label for="ojo_izquierdo_cerca_esf">Ojo Izquierdo - Esf (Cerca)</label>
         {{ form.ojo_izquierdo_cerca_esf }}
@@ -125,11 +130,11 @@
         {{ form.ojo_izquierdo_cerca_alt }}
     </div>
     <div class="form-group">
-        <label for="cristal_cerca">Cristal (Cerca)</label>
+        <label for="cristal_cerca"><h6>CRISTAL</h6></label>
         {{ form.cristal_cerca }}
     </div>
     <div class="form-group">
-        <label for="armazon_cerca">Armazón (Cerca)</label>
+        <label for="armazon_cerca"><h6>ARMAZÓN</h6></label>
         {{ form.armazon_cerca }}
     </div>
 </div>
@@ -153,19 +158,22 @@
         <label for="como_nos_conocio">¿Cómo nos conoció?</label>
         {{ form.como_nos_conocio }}
     </div>
+</div>
+<div class='form-section'>
     <div class="form-group">
-        <label for="total">Total</label>
+        <label for="total"><h6>TOTAL</h6></label>
         {{ form.total }}
     </div>
     <div class="form-group">
-        <label for="seña">Seña</label>
+        <label for="seña"><h6>SEÑA</h6></label>
         {{ form.seña }}
     </div>
     <div class="form-group">
-        <label for="saldo">Saldo</label>
+        <label for="saldo"><h6>SALDO</h6></label>
         {{ form.saldo }}
     </div>
 </div>
+
 
 </form>
 <button class="btn-enviar" type="submit">Enviar</button>
