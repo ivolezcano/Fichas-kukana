@@ -1,0 +1,42 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<h1 style="text-align: center; margin: 0;">Fichas Ópticas</h1>
+
+<form action="{% url 'listagem_usuarios' %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="divInput">
+            <label> Nome</label>
+            <input class="inputLabel" name="nome" class="form-control-sm" type="text">
+        </div>
+        <div class="divInput">
+            <label>Idade</label>
+            <input class="inputLabel" name="idade" class="form-control-sm" type="number">
+        </div>
+        <div class="divInput">
+            <label>Profissão</label>
+            <input class="inputLabel" name="profissao" class="form-control-sm" type="text>">
+        </div>
+        <div class="divInput">
+            <label>Data de Nascimento</label>
+            <input class="inputLabel" name="nascimento" class="form-control-sm" type="date">
+        </div>
+        <div class="divInput">
+            <label>Plano de Saude</label>
+            <input class="inputLabel" name="plano_saude" class="form-control-sm" type="text">
+        </div>
+        <div class="divInput">
+            <label>Diagnostico</label>
+            <input class="inputLabel" name="diagnostico" class="form-control-sm" type="text">
+        </div>
+    </div>
+
+    <button class="form-control-sm">Enviar</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="form-control-sm"><a href="{% url 'listagem_usuarios' %}" style='text-decoration: none; color: white;'>Listado de fichas</a></button>
+
+</form>
+{% endblock %}
