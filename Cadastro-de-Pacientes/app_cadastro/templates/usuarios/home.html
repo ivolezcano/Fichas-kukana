@@ -4,39 +4,174 @@
 
 <form action="{% url 'listagem_usuarios' %}" method="post">
     {% csrf_token %}
-    <div class="container">
-        <div class="divInput">
-            <label> Nome</label>
-            <input class="inputLabel" name="nome" class="form-control-sm" type="text">
+    <div class="form-section">
+        <div class="form-group">
+            <label for="numero_trabajo">Número de Trabajo</label>
+            {{ form.numero_trabajo }}
         </div>
-        <div class="divInput">
-            <label>Idade</label>
-            <input class="inputLabel" name="idade" class="form-control-sm" type="number">
-        </div>
-        <div class="divInput">
-            <label>Profissão</label>
-            <input class="inputLabel" name="profissao" class="form-control-sm" type="text>">
-        </div>
-        <div class="divInput">
-            <label>Data de Nascimento</label>
-            <input class="inputLabel" name="nascimento" class="form-control-sm" type="date">
-        </div>
-        <div class="divInput">
-            <label>Plano de Saude</label>
-            <input class="inputLabel" name="plano_saude" class="form-control-sm" type="text">
-        </div>
-        <div class="divInput">
-            <label>Diagnostico</label>
-            <input class="inputLabel" name="diagnostico" class="form-control-sm" type="text">
-        </div>
+        <div class="form-group">
+            <label for="fecha_retiro">Fecha en que el cliente puede retirar</label>
+            {{ form.fecha_retiro }}
+        </div>  
     </div>
 
-    <button class="form-control-sm">Enviar</button>
-    <br>
-    <br>
-    <br>
-    <br>
-    <button class="form-control-sm"><a href="{% url 'listagem_usuarios' %}" style='text-decoration: none; color: white;'>Listado de fichas</a></button>
+<!-- Sección de cliente -->
+<div class="form-section">
+    <h3>Información del Cliente</h3>
+    <div class="form-group">
+        <label for="nombre_cliente">Nombre del Cliente</label>
+        {{ form.nombre_cliente }}
+    </div>
+    <div class="form-group">
+        <label for="es_cliente">¿Es cliente?</label>
+        {{ form.es_cliente }}
+    </div>
+    <div class="form-group">
+        <label for="domicilio">Domicilio</label>
+        {{ form.domicilio }}
+    </div>
+    <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        {{ form.telefono }}
+    </div>
+    <div class="form-group">
+        <label for="whatsapp">WhatsApp</label>
+        {{ form.whatsapp }}
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        {{ form.email }}
+    </div>
+</div>
+
+<!-- Sección de detalles de lejos -->
+<div class="form-section">
+    <h3>Detalles de Lejos</h3>
+    <div class="form-group">
+        <label for="ojo_derecho_lejos_esf">Ojo Derecho - Esf (Lejos)</label>
+        {{ form.ojo_derecho_lejos_esf }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_derecho_lejos_cil">Ojo Derecho - Cil (Lejos)</label>
+        {{ form.ojo_derecho_lejos_cil }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_derecho_lejos_en">Ojo Derecho - en (Lejos)</label>
+        {{ form.ojo_derecho_lejos_en }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_derecho_lejos_dip">Ojo Derecho - Dip (Lejos)</label>
+        {{ form.ojo_derecho_lejos_dip }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_lejos_esf">Ojo Izquierdo - Esf (Lejos)</label>
+        {{ form.ojo_izquierdo_lejos_esf }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_lejos_cil">Ojo Izquierdo - Cil (Lejos)</label>
+        {{ form.ojo_izquierdo_lejos_cil }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_lejos_en">Ojo Izquierdo - en (Lejos)</label>
+        {{ form.ojo_izquierdo_lejos_en }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_lejos_alt">Ojo Izquierdo - ALT (Lejos)</label>
+        {{ form.ojo_izquierdo_lejos_alt }}
+    </div>
+    <div class="form-group">
+        <label for="cristal_lejos">Cristal (Lejos)</label>
+        {{ form.cristal_lejos }}
+    </div>
+    <div class="form-group">
+        <label for="armazon_lejos">Armazón (Lejos)</label>
+        {{ form.armazon_lejos }}
+    </div>
+</div>
+
+<!-- Sección de detalles de cerca -->
+<div class="form-section">
+    <h3>Detalles de Cerca</h3>
+    <div class="form-group">
+        <label for="ojo_derecho_cerca_esf">Ojo Derecho - Esf (Cerca)</label>
+        {{ form.ojo_derecho_cerca_esf }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_derecho_cerca_cil">Ojo Derecho - Cil (Cerca)</label>
+        {{ form.ojo_derecho_cerca_cil }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_derecho_cerca_en">Ojo Derecho - en (Cerca)</label>
+        {{ form.ojo_derecho_cerca_en }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_derecho_cerca_dip">Ojo Derecho - Dip (Cerca)</label>
+        {{ form.ojo_derecho_cerca_dip }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_cerca_esf">Ojo Izquierdo - Esf (Cerca)</label>
+        {{ form.ojo_izquierdo_cerca_esf }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_cerca_cil">Ojo Izquierdo - Cil (Cerca)</label>
+        {{ form.ojo_izquierdo_cerca_cil }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_cerca_en">Ojo Izquierdo - en (Cerca)</label>
+        {{ form.ojo_izquierdo_cerca_en }}
+    </div>
+    <div class="form-group">
+        <label for="ojo_izquierdo_cerca_alt">Ojo Izquierdo - ALT (Cerca)</label>
+        {{ form.ojo_izquierdo_cerca_alt }}
+    </div>
+    <div class="form-group">
+        <label for="cristal_cerca">Cristal (Cerca)</label>
+        {{ form.cristal_cerca }}
+    </div>
+    <div class="form-group">
+        <label for="armazon_cerca">Armazón (Cerca)</label>
+        {{ form.armazon_cerca }}
+    </div>
+</div>
+
+<!-- Sección de detalles adicionales -->
+<div class="form-section">
+    <h3>Detalles Adicionales</h3>
+    <div class="form-group">
+        <label for="receta_doctor">Receta Dr</label>
+        {{ form.receta_doctor }}
+    </div>
+    <div class="form-group">
+        <label for="obra_social">O.O.S.S</label>
+        {{ form.obra_social }}
+    </div>
+    <div class="form-group">
+        <label for="observaciones">Observaciones</label>
+        {{ form.observaciones }}
+    </div>
+    <div class="form-group">
+        <label for="como_nos_conocio">¿Cómo nos conoció?</label>
+        {{ form.como_nos_conocio }}
+    </div>
+    <div class="form-group">
+        <label for="total">Total</label>
+        {{ form.total }}
+    </div>
+    <div class="form-group">
+        <label for="seña">Seña</label>
+        {{ form.seña }}
+    </div>
+    <div class="form-group">
+        <label for="saldo">Saldo</label>
+        {{ form.saldo }}
+    </div>
+</div>
 
 </form>
+<button class="btn-enviar" type="submit">Enviar</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="btn-listar-fichas"><a href="{% url 'listagem_usuarios' %}" style='text-decoration: none; color: white;'>Listar Fichas</a></button>
 {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'usuarios/base.html' %}
+
+{% block conteudo %}
+<div class="container">
+    <h1 style="text-align: center; margin: 0;">Fichas</h1>
+    <br>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>N°</th>
+            <th>Cliente</th>
+            <th>Retiro</th>
+            <th>Total</th>
+            <th>Seña</th>
+            <th>Saldo</th>
+        </tr>
+        {% for trabajo in trabajos %}
+        <tr>
+            <td>{{ trabajo.numero_trabajo}}</td>
+            <td>{{ trabajo.nombre_cliente }}</td>
+            <td>{{ trabajo.fecha_retiro }}</td>
+            <td>${{ trabajo.total }}</td>
+            <td>${{ trabajo.seña }}</td>
+            <td>${{ trabajo.saldo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
