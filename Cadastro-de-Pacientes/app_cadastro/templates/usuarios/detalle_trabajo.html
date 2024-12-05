@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura - Trabajo N°{{ trabajo.numero_trabajo }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+
+        .section .label {
+            font-weight: bold;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trabajo N°{{ trabajo.numero_trabajo }}</h1>
+
+        <div class="section">
+            <h2>Información del Cliente</h2>
+            <p><span class="label">Cliente:</span> {{ trabajo.nombre_cliente }}</p>
+            <p><span class="label">Domicilio:</span> {{ trabajo.domicilio }}</p>
+            <p><span class="label">Teléfono:</span> {{ trabajo.telefono }}</p>
+            <p><span class="label">WhatsApp:</span> {{ trabajo.whatsapp }}</p>
+            <p><span class="label">Email:</span> {{ trabajo.email }}</p>
+        </div>
+
+        <div class="section">
+            <h2>Fecha de Retiro</h2>
+            <p><span class="label">Fecha de Retiro:</span> {{ trabajo.fecha_retiro }}</p>
+        </div>
+
+        <div class="section">
+            <h2>Pagos</h2>
+            <p><span class="label">Total:</span> ${{ trabajo.total|floatformat:2 }}</p>
+            <p><span class="label">Seña:</span> ${{ trabajo.seña|floatformat:2 }}</p>
+            <p><span class="label">Saldo:</span> ${{ trabajo.saldo|floatformat:2 }}</p>
+        </div>
+
+        <div class="section">
+            <h2>Detalles de la Receta</h2>
+
+            {% if trabajo.ojo_derecho_lejos_esf or trabajo.ojo_derecho_lejos_cil or trabajo.ojo_derecho_lejos_en or trabajo.ojo_derecho_lejos_dip %}
+                <h3>Ojo Derecho - Lejos</h3>
+                <p><span class="label">Esf:</span> {{ trabajo.ojo_derecho_lejos_esf }}</p>
+                <p><span class="label">Cil:</span> {{ trabajo.ojo_derecho_lejos_cil }}</p>
+                <p><span class="label">En:</span> {{ trabajo.ojo_derecho_lejos_en }}</p>
+                <p><span class="label">Dip:</span> {{ trabajo.ojo_derecho_lejos_dip }}</p>
+                <p><span class="label">Cristal:</span> {{ trabajo.cristal_lejos }}</p>
+                <p><span class="label">Armazón:</span> {{ trabajo.armazon_lejos }}</p>
+            {% endif %}
+
+            {% if trabajo.ojo_izquierdo_lejos_esf or trabajo.ojo_izquierdo_lejos_cil or trabajo.ojo_izquierdo_lejos_en or trabajo.ojo_izquierdo_lejos_alt %}
+                <h3>Ojo Izquierdo - Lejos</h3>
+                <p><span class="label">Esf:</span> {{ trabajo.ojo_izquierdo_lejos_esf }}</p>
+                <p><span class="label">Cil:</span> {{ trabajo.ojo_izquierdo_lejos_cil }}</p>
+                <p><span class="label">En:</span> {{ trabajo.ojo_izquierdo_lejos_en }}</p>
+                <p><span class="label">Alt:</span> {{ trabajo.ojo_izquierdo_lejos_alt }}</p>
+                <p><span class="label">Cristal:</span> {{ trabajo.cristal_lejos }}</p>
+                <p><span class="label">Armazón:</span> {{ trabajo.armazon_lejos }}</p>
+            {% endif %}
+
+            {% if trabajo.ojo_derecho_cerca_esf or trabajo.ojo_derecho_cerca_cil or trabajo.ojo_derecho_cerca_en or trabajo.ojo_derecho_cerca_dip %}
+                <h3>Ojo Derecho - Cerca</h3>
+                <p><span class="label">Esf:</span> {{ trabajo.ojo_derecho_cerca_esf }}</p>
+                <p><span class="label">Cil:</span> {{ trabajo.ojo_derecho_cerca_cil }}</p>
+                <p><span class="label">En:</span> {{ trabajo.ojo_derecho_cerca_en }}</p>
+                <p><span class="label">Dip:</span> {{ trabajo.ojo_derecho_cerca_dip }}</p>
+                <p><span class="label">Cristal:</span> {{ trabajo.cristal_cerca }}</p>
+                <p><span class="label">Armazón:</span> {{ trabajo.armazon_cerca }}</p>
+            {% endif %}
+
+            {% if trabajo.ojo_izquierdo_cerca_esf or trabajo.ojo_izquierdo_cerca_cil or trabajo.ojo_izquierdo_cerca_en or trabajo.ojo_izquierdo_cerca_alt %}
+                <h3>Ojo Izquierdo - Cerca</h3>
+                <p><span class="label">Esf:</span> {{ trabajo.ojo_izquierdo_cerca_esf }}</p>
+                <p><span class="label">Cil:</span> {{ trabajo.ojo_izquierdo_cerca_cil }}</p>
+                <p><span class="label">En:</span> {{ trabajo.ojo_izquierdo_cerca_en }}</p>
+                <p><span class="label">Alt:</span> {{ trabajo.ojo_izquierdo_cerca_alt }}</p>
+                <p><span class="label">Cristal:</span> {{ trabajo.cristal_cerca }}</p>
+                <p><span class="label">Armazón:</span> {{ trabajo.armazon_cerca }}</p>
+            {% endif %}
+        </div>
+
+        <div class="footer">
+            <a href="{% url 'descargar_pdf' trabajo.pk %}">Descargar PDF</a>
+            <a href="{% url 'listagem_usuarios' %}">Volver a la lista</a>
+        </div>
+    </div>
+</body>
+</html>

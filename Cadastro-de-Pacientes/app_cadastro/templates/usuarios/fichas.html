@@ -12,6 +12,7 @@
             <th class='th-titulos'>Total</th>
             <th class='th-titulos'>Seña</th>
             <th class='th-titulos'>Saldo</th>
+            <th class='th-titulos'>Acciones</th>
         </tr>
         {% for trabajo in trabajos %}
         <tr>
@@ -21,6 +22,9 @@
             <td>${{ trabajo.total }}</td>
             <td>${{ trabajo.seña }}</td>
             <td>${{ trabajo.saldo }}</td>
+            <td>
+                <a href="{% url 'detalle_trabajo' trabajo.numero_trabajo %}">Ver Detalle</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
